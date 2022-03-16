@@ -1,18 +1,23 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+	<v-container>
+		<commit-card />
+	</v-container>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import CommitCard from "@/components/CommitCard";
 export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
-}
+	name: "Home",
+	mounted() {
+		console.log("Commit state: ", this.commits);
+	},
+	data() {
+		return {
+			commits: [],
+		};
+	},
+	components: {
+		CommitCard,
+	},
+};
 </script>
